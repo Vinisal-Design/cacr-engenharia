@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CACR Engenharia — Soluções completas em ar condicionado central, climatização, filtragem e ventilação para indústria e conforto térmico.">
+  <title>CACR Engenharia | Total Clima Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & VARIABLES ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-primary: #1B4F7C;
+      --color-secondary: #3D6B8E;
+      --color-accent: #D4792A;
+      --color-accent-dark: #E8923D;
+      --color-trust: #1A8C6A;
+      --color-neutral-50: #F7F8FA;
+      --color-neutral-100: #E8ECF1;
+      --color-neutral-200: #CBD3DC;
+      --color-neutral-400: #8494A7;
+      --color-neutral-700: #3A4A5C;
+      --color-neutral-900: #1A2332;
+      --color-dark-bg: #0F1B2D;
+      --color-gradient: linear-gradient(135deg, #1B4F7C 0%, #0F1B2D 100%);
+
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'IBM Plex Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --ease-reveal: cubic-bezier(0.25, 0, 0.1, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 0.9375rem + 0.3125vw, 1.1875rem);
+      line-height: 1.65;
+      font-weight: 400;
+      color: var(--color-neutral-700);
+      background: #fff;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== FOCUS STATES ===== */
+    :focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-neutral-900);
+    }
+
+    .display-text {
+      font-size: clamp(2.75rem, 2rem + 3.75vw, 5.5rem);
+      line-height: 1.05;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 1.375rem + 1.875vw, 3rem);
+      line-height: 1.15;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: clamp(1.375rem, 1.125rem + 1.25vw, 2.25rem);
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .stat-number {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-body);
+      font-size: clamp(0.75rem, 0.6875rem + 0.3125vw, 0.875rem);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 3rem;
+      }
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.875rem 1.75rem;
+      border-radius: 100px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 300ms var(--ease-reveal);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: var(--color-neutral-900);
+      border-color: var(--color-accent);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--color-accent);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .btn-outline:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--color-neutral-900);
+      border-color: var(--color-neutral-200);
+    }
+
+    .btn-outline-dark:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .btn-accent-outline {
+      background: transparent;
+      color: var(--color-accent-dark);
+      border-color: var(--color-accent-dark);
+    }
+
+    .btn-accent-outline:hover {
+      background: var(--color-accent-dark);
+      color: var(--color-dark-bg);
+    }
+
+    .btn .arrow {
+      display: inline-block;
+      transition: transform 300ms var(--ease-reveal);
+    }
+
+    .btn:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      transition: background 400ms ease, box-shadow 400ms ease, backdrop-filter 400ms ease;
+    }
+
+    @media (min-width: 1024px) {
+      .nav {
+        height: 72px;
+      }
+    }
+
+    .nav--scrolled {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .nav__inner {
+        padding: 0 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .nav__inner {
+        padding: 0 3rem;
+      }
+    }
+
+    .nav__logo img {
+      height: 32px;
+      width: auto;
+    }
+
+    @media (min-width: 1024px) {
+      .nav__logo img {
+        height: 40px;
+      }
+    }
+
+    .nav__links {
+      display: none;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      .nav__links {
+        display: flex;
+      }
+    }
+
+    .nav__link {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #fff;
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 300ms ease;
+    }
+
+    .nav--scrolled .nav__link {
+      color: var(--color-neutral-700);
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 300ms var(--ease-reveal);
+    }
+
+    .nav__link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav__cta {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .nav__cta {
+        display: inline-flex;
+      }
+    }
+
+    .nav__cta .btn {
+      padding: 0.625rem 1.25rem;
+      font-size: 0.8125rem;
+      background: var(--color-accent);
+      color: var(--color-neutral-900);
+      border-color: var(--color-accent);
+    }
+
+    .nav--scrolled .nav__cta .btn {
+      background: var(--color-accent);
+      color: var(--color-neutral-900);
+    }
+
+    .nav__cta .btn:hover {
+      background: transparent;
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    /* Hamburger */
+    .nav__hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    @media (min-width: 1024px) {
+      .nav__hamburger {
+        display: none;
+      }
+    }
+
+    .nav__hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      transition: all 300ms ease;
+    }
+
+    .nav--scrolled .nav__hamburger span {
+      background: var(--color-neutral-900);
+    }
+
+    .mobile-open .nav__hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-open .nav__hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-open .nav__hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Mobile Panel */
+    .nav__mobile-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 320px;
+      background: var(--color-dark-bg);
+      z-index: 999;
+      transform: translateX(100%);
+      transition: transform 400ms var(--ease-reveal);
+      padding: 5rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-open .nav__mobile-panel {
+      transform: translateX(0);
+    }
+
+    .nav__mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 400ms ease;
+    }
+
+    .mobile-open .nav__mobile-overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav__mobile-link {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: block;
+      transition: color 300ms ease;
+    }
+
+    .nav__mobile-link:hover {
+      color: var(--color-accent);
+    }
+
+    .nav__mobile-cta {
+      margin-top: auto;
+    }
+
+    .nav__mobile-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--color-gradient);
+      overflow: hidden;
+      padding: 5rem 0 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        padding: 0;
+      }
+    }
+
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 1024px) {
+      .hero__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    .hero__content {
+      color: #fff;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent-dark);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 600ms ease, transform 600ms var(--ease-reveal);
+    }
+
+    .hero__badge.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero__badge::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--color-accent-dark);
+    }
+
+    .hero__headline {
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-word-mask {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+
+    .hero-word {
+      display: inline-block;
+      transform: translateY(105%);
+      transition: transform 800ms var(--ease-reveal);
+    }
+
+    .hero-word.in-view {
+      transform: translateY(0);
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 0.9375rem + 0.3125vw, 1.1875rem);
+      line-height: 1.65;
+      color: var(--color-neutral-200);
+      max-width: 520px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease 400ms, transform 700ms var(--ease-reveal) 400ms;
+    }
+
+    .hero__sub.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease 500ms, transform 700ms var(--ease-reveal) 500ms;
+    }
+
+    .hero__ctas.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 2rem;
+    }
+
+    .hero__stat {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease, transform 600ms var(--ease-reveal);
+    }
+
+    .hero__stat.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero__stat-number {
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero__stat-label {
+      color: var(--color-neutral-400);
+    }
+
+    /* Hero Image */
+    .hero__visual {
+      position: relative;
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .hero__visual {
+        display: block;
+      }
+    }
+
+    .hero__image-wrap {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      clip-path: inset(8%);
+      transition: clip-path 1000ms var(--ease-reveal);
+    }
+
+    .hero__image-wrap.in-view {
+      clip-path: inset(0%);
+    }
+
+    .hero__image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.1);
+      transition: transform 1200ms var(--ease-reveal);
+    }
+
+    .hero__image-wrap.in-view img {
+      transform: scale(1);
+    }
+
+    /* Marquee */
+    .hero__marquee {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 0.5em;
+      animation: marquee-scroll 20s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-text {
+      font-family: var(--font-heading);
+      font-size: clamp(6rem, 5rem + 8vw, 16rem);
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      opacity: 0.06;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+      line-height: 0.85;
+      user-select: none;
+    }
+
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ===== SERVICES ===== */
+    .services {
+      background: var(--color-dark-bg);
+      padding: clamp(4rem, 3rem + 5vw, 8rem) 0;
+    }
+
+    .services__header {
+      margin-bottom: clamp(3rem, 2rem + 3vw, 5rem);
+    }
+
+    .services__heading {
+      color: #fff;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .services__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      position: relative;
+      padding: 2rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid transparent;
+      border-radius: 4px;
+      transition: transform 400ms var(--ease-reveal), border-color 300ms ease, background 300ms ease;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .service-card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 600ms var(--ease-reveal), transform 600ms var(--ease-reveal), border-color 300ms ease, background 300ms ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-left-color: var(--color-accent);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .service-card.in-view:hover {
+      transform: translateY(-4px);
+    }
+
+    .service-card__index {
+      font-family: var(--font-mono);
+      font-size: clamp(3rem, 2.5rem + 2vw, 5rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.08);
+      line-height: 1;
+      margin-bottom: 1rem;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    .service-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      position: relative;
+    }
+
+    .service-card__desc {
+      font-size: 0.9375rem;
+      color: var(--color-neutral-100);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .services__cta {
+      margin-top: clamp(3rem, 2rem + 3vw, 5rem);
+      text-align: center;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      padding: clamp(4rem, 3rem + 5vw, 8rem) 0;
+      overflow: hidden;
+    }
+
+    .about__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .about__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+    }
+
+    .about__image-col {
+      position: relative;
+    }
+
+    .about__image-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .about__image-wrap img {
+      width: 100%;
+      will-change: transform;
+    }
+
+    .about__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 600ms ease, transform 600ms var(--ease-reveal);
+    }
+
+    .about__eyebrow.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about__heading {
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease 100ms, transform 600ms var(--ease-reveal) 100ms;
+    }
+
+    .about__heading.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about__narrative {
+      font-size: clamp(1.0625rem, 1rem + 0.3125vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--color-secondary);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease 200ms, transform 600ms var(--ease-reveal) 200ms;
+    }
+
+    .about__narrative.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about__text {
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease 300ms, transform 600ms var(--ease-reveal) 300ms;
+    }
+
+    .about__text.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about__text p {
+      margin-bottom: 1rem;
+    }
+
+    .about__credentials {
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease 400ms, transform 600ms var(--ease-reveal) 400ms;
+    }
+
+    .about__credentials.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about__credentials li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 500;
+      color: var(--color-neutral-700);
+    }
+
+    .about__credentials li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: var(--color-trust);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 12px;
+    }
+
+    /* ===== AWARDS ===== */
+    .awards {
+      background: var(--color-neutral-50);
+      padding: clamp(4rem, 3rem + 5vw, 8rem) 0;
+    }
+
+    .awards__heading {
+      margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+    }
+
+    .awards__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .awards__inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+
+    .awards__featured {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms var(--ease-reveal), transform 700ms var(--ease-reveal);
+    }
+
+    .awards__featured.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .awards__featured-image {
+      margin-bottom: 1.5rem;
+      max-width: 280px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+      padding: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    .awards__featured-image img {
+      width: 100%;
+    }
+
+    .awards__featured h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .awards__featured p {
+      color: var(--color-neutral-400);
+      font-size: 0.9375rem;
+    }
+
+    .awards__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .awards__row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid var(--color-neutral-100);
+      transition: background 300ms ease, border-color 300ms ease, transform 300ms var(--ease-reveal);
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    .awards__row.in-view {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .awards__row:hover {
+      background: var(--color-neutral-50);
+      border-color: var(--color-accent);
+      transform: translateX(4px);
+    }
+
+    .awards__row.in-view:hover {
+      transform: translateX(4px);
+    }
+
+    .awards__row-image {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-neutral-50);
+      border-radius: 4px;
+      padding: 0.5rem;
+    }
+
+    .awards__row-image img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .awards__row-info {
+      flex: 1;
+    }
+
+    .awards__row-title {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-neutral-900);
+    }
+
+    .awards__row-year {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--color-neutral-400);
+    }
+
+    .awards__row-counter {
+      font-family: var(--font-mono);
+      font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-accent);
+      transition: color 300ms ease;
+    }
+
+    .awards__row:hover .awards__row-counter {
+      color: var(--color-primary);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: var(--color-dark-bg);
+      padding: clamp(5rem, 4rem + 6vw, 10rem) 0;
+      text-align: center;
+    }
+
+    .cta-section__headline {
+      color: #fff;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .cta-char-mask {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+
+    .cta-char {
+      display: inline-block;
+      transform: translateY(105%);
+      transition: transform 600ms var(--ease-reveal);
+    }
+
+    .cta-char.in-view {
+      transform: translateY(0);
+    }
+
+    .cta-section__lead {
+      color: var(--color-neutral-200);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease 600ms, transform 600ms var(--ease-reveal) 600ms;
+    }
+
+    .cta-section__lead.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cta-section__email {
+      display: inline-block;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease 700ms, transform 600ms var(--ease-reveal) 700ms;
+    }
+
+    .cta-section__email.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cta-email-link {
+      font-family: var(--font-heading);
+      font-size: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+      font-weight: 600;
+      color: #fff;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      padding: 0.25rem 0;
+    }
+
+    .cta-email-link__default,
+    .cta-email-link__hover {
+      display: block;
+      transition: transform 400ms var(--ease-reveal);
+    }
+
+    .cta-email-link__hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: var(--color-accent-dark);
+      transform: translateY(100%);
+    }
+
+    .cta-email-link:hover .cta-email-link__default {
+      transform: translateY(-100%);
+    }
+
+    .cta-email-link:hover .cta-email-link__hover {
+      transform: translateY(0);
+    }
+
+    .cta-section__btn {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease 800ms, transform 600ms var(--ease-reveal) 800ms;
+    }
+
+    .cta-section__btn.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--color-dark-bg);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: clamp(3rem, 2rem + 3vw, 5rem) 0 2rem;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: clamp(3rem, 2rem + 3vw, 5rem);
+    }
+
+    @media (min-width: 768px) {
+      .footer__top {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer__top {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .footer__col-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-neutral-400);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer__col-value {
+      color: var(--color-neutral-100);
+      font-weight: 500;
+      transition: color 300ms ease;
+    }
+
+    a.footer__col-value:hover {
+      color: var(--color-accent);
+    }
+
+    .footer__wordmark-wrap {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .footer__wordmark {
+      font-family: var(--font-heading);
+      font-size: clamp(4rem, 18vw, 22rem);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -0.05em;
+      color: #fff;
+      line-height: 0.85;
+      user-select: none;
+      transform: scale(0.9);
+      opacity: 0;
+      transition: transform 800ms var(--ease-reveal), opacity 800ms var(--ease-reveal);
+    }
+
+    .footer__wordmark.in-view {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .footer__tagline {
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-neutral-400);
+      margin-bottom: 3rem;
+    }
+
+    .footer__bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer__copy {
+      font-size: 0.8125rem;
+      color: var(--color-neutral-400);
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .marquee-track {
+        animation-play-state: paused;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* ===== UTILITY ===== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="CACR Engenharia - Voltar ao topo">
+        <img src="assets/logo.gif" alt="CACR Engenharia" width="120" height="40">
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav__links">
+          <li><a href="#empresa" class="nav__link">Empresa</a></li>
+          <li><a href="#servicos" class="nav__link">Serviços</a></li>
+          <li><a href="#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="#premiacoes" class="nav__link">Premiações</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__cta">
+        <a href="mailto:cacr@cacr.com.br" class="btn">Solicitar Orçamento</a>
+      </div>
+
+      <button class="nav__hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Panel -->
+  <div class="nav__mobile-overlay" aria-hidden="true"></div>
+  <div class="nav__mobile-panel" role="dialog" aria-label="Menu de navegação" aria-hidden="true">
+    <a href="#empresa" class="nav__mobile-link">Empresa</a>
+    <a href="#servicos" class="nav__mobile-link">Serviços</a>
+    <a href="#sobre" class="nav__mobile-link">Sobre</a>
+    <a href="#premiacoes" class="nav__mobile-link">Premiações</a>
+    <a href="#contato" class="nav__mobile-link">Contato</a>
+    <div class="nav__mobile-cta">
+      <a href="mailto:cacr@cacr.com.br" class="btn btn-primary">Solicitar Orçamento</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="empresa" aria-label="Seção principal">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <div class="hero__badge" data-anim="badge">
+              HVAC Engineering
+            </div>
+
+            <h1 class="hero__headline" data-anim="hero-headline">
+              Engenharia do Clima com Tecnologia Internacional
+            </h1>
+
+            <p class="hero__sub" data-anim="hero-sub">
+              Soluções completas em ar condicionado central, climatização, filtragem e ventilação para indústria e conforto térmico.
+            </p>
+
+            <div class="hero__ctas" data-anim="hero-ctas">
+              <a href="mailto:cacr@cacr.com.br" class="btn btn-primary">Solicitar Orçamento</a>
+              <a href="#servicos" class="btn btn-outline">Conheça Nossos Serviços</a>
+            </div>
+
+            <div class="hero__stats">
+              <div class="hero__stat" data-anim="hero-stat" data-delay="600">
+                <div class="stat-number hero__stat-number" data-count="20" data-suffix="+">0</div>
+                <div class="stat-label hero__stat-label">Anos de experiência</div>
+              </div>
+              <div class="hero__stat" data-anim="hero-stat" data-delay="700">
+                <div class="stat-number hero__stat-number" data-count="6">0</div>
+                <div class="stat-label hero__stat-label">Setores atendidos</div>
+              </div>
+              <div class="hero__stat" data-anim="hero-stat" data-delay="800">
+                <div class="stat-number hero__stat-number" style="font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1.125rem); letter-spacing: 0;">Brasil + América do Sul</div>
+                <div class="stat-label hero__stat-label">Cobertura</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="hero__image-wrap" data-anim="hero-image">
+              <img src="assets/ft_01.gif" alt="Sistemas de climatização CACR em operação" width="600" height="750" loading="eager">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+          <span class="marquee-text">CACR</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="servicos" aria-label="Nossas especialidades">
+      <div class="container">
+        <div class="services__header">
+          <h2 class="services__heading">Nossas Especialidades</h2>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card" data-anim="service-card" data-delay="0">
+            <span class="service-card__index" aria-hidden="true">01</span>
+            <h3 class="service-card__title">Ar Condicionado Central</h3>
+            <p class="service-card__desc">Projetos completos de engenharia e instalação de sistemas centrais de alta performance.</p>
+          </article>
+
+          <article class="service-card" data-anim="service-card" data-delay="100">
+            <span class="service-card__index" aria-hidden="true">02</span>
+            <h3 class="service-card__title">Climatização Industrial</h3>
+            <p class="service-card__desc">Soluções sob medida para indústria têxtil, farmacêutica, automotiva e telecomunicações.</p>
+          </article>
+
+          <article class="service-card" data-anim="service-card" data-delay="200">
+            <span class="service-card__index" aria-hidden="true">03</span>
+            <h3 class="service-card__title">Filtragem de Ar</h3>
+            <p class="service-card__desc">Sistemas de filtragem que atendem às mais rigorosas normas técnicas e sanitárias.</p>
+          </article>
+
+          <article class="service-card" data-anim="service-card" data-delay="300">
+            <span class="service-card__index" aria-hidden="true">04</span>
+            <h3 class="service-card__title">Ventilação Mecânica</h3>
+            <p class="service-card__desc">Projetos de ventilação para ambientes industriais e comerciais com eficiência energética.</p>
+          </article>
+
+          <article class="service-card" data-anim="service-card" data-delay="400">
+            <span class="service-card__index" aria-hidden="true">05</span>
+            <h3 class="service-card__title">Conforto Térmico</h3>
+            <p class="service-card__desc">Engenharia de conforto para escritórios, hospitais e espaços comerciais.</p>
+          </article>
+
+          <article class="service-card" data-anim="service-card" data-delay="500">
+            <span class="service-card__index" aria-hidden="true">06</span>
+            <h3 class="service-card__title">Consultoria Técnica</h3>
+            <p class="service-card__desc">Estudos de engenharia, LCC (Life Cycle Cost) e suporte tecnológico internacional.</p>
+          </article>
+        </div>
+
+        <div class="services__cta">
+          <a href="mailto:cacr@cacr.com.br" class="btn btn-accent-outline">
+            Fale com Nossa Engenharia <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="sobre" aria-label="Sobre a CACR">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__image-col">
+            <div class="about__image-wrap" data-parallax>
+              <img src="assets/ft_01.gif" alt="Instalações CACR" width="600" height="400" loading="lazy">
+            </div>
+          </div>
+
+          <div class="about__content">
+            <p class="about__eyebrow" data-anim="about-reveal">Sobre a CACR</p>
+            <h2 class="about__heading" data-anim="about-reveal">Total Clima Solutions</h2>
+            <p class="about__narrative" data-anim="about-reveal">
+              Com suporte tecnológico internacional, a CACR vem fornecendo ao longo dos anos estudos de engenharia, equipamentos, materiais e instalações que solucionam totalmente as questões da engenharia do clima.
+            </p>
+            <div class="about__text" data-anim="about-reveal">
+              <p>Uma empresa focada no cliente, com atividade principal voltada para a engenharia e instalação de sistemas de ar condicionado central.</p>
+              <p>Com sistemas em operação de norte a sul do Brasil e em países da América do Sul, aliamos tecnologias complexas e a força do ar para assegurar simplicidade e sistemas de primeira classe.</p>
+            </div>
+            <ul class="about__credentials" data-anim="about-reveal">
+              <li>Suporte tecnológico internacional</li>
+              <li>Operações do Norte ao Sul do Brasil</li>
+              <li>Presença na América do Sul</li>
+              <li>LCC — Life Cycle Cost optimized</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AWARDS ===== -->
+    <section class="awards" id="premiacoes" aria-label="Premiações e reconhecimento">
+      <div class="container">
+        <h2 class="awards__heading">Reconhecimento</h2>
+
+        <div class="awards__inner">
+          <div class="awards__featured" data-anim="awards-featured">
+            <div class="awards__featured-image">
+              <img src="assets/premioquality.gif" alt="Prêmio Quality Brasil 2002" width="280" height="200" loading="lazy">
+            </div>
+            <h3>Prêmio Quality Brasil</h3>
+            <p>Reconhecimento pela excelência em engenharia e qualidade de serviços prestados no setor de climatização.</p>
+          </div>
+
+          <div class="awards__list">
+            <div class="awards__row" data-anim="awards-row" data-delay="0">
+              <div class="awards__row-image">
+                <img src="assets/premioquality.gif" alt="Quality Brasil" width="60" height="60" loading="lazy">
+              </div>
+              <div class="awards__row-info">
+                <div class="awards__row-title">Quality Brasil</div>
+                <div class="awards__row-year">Prêmio de Excelência</div>
+              </div>
+              <div class="awards__row-counter" data-count-year="2002">2002</div>
+            </div>
+
+            <div class="awards__row" data-anim="awards-row" data-delay="60">
+              <div class="awards__row-image">
+                <img src="assets/premiosmacna.gif" alt="SMACNA Brasil" width="60" height="60" loading="lazy">
+              </div>
+              <div class="awards__row-info">
+                <div class="awards__row-title">SMACNA Brasil</div>
+                <div class="awards__row-year">Prêmio de Qualidade</div>
+              </div>
+              <div class="awards__row-counter" data-count-year="2003">2003</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section" id="contato" aria-label="Entre em contato">
+      <div class="container">
+        <h2 class="cta-section__headline" data-anim="cta-headline">
+          Chamou nossa atenção? Imagine o que podemos fazer pelo seu projeto.
+        </h2>
+
+        <p class="cta-section__lead" data-anim="cta-lead">
+          Entre em contato com nossa equipe de engenharia para soluções em climatização.
+        </p>
+
+        <div class="cta-section__email" data-anim="cta-email">
+          <a href="mailto:cacr@cacr.com.br" class="cta-email-link">
+            <span class="cta-email-link__default">cacr@cacr.com.br</span>
+            <span class="cta-email-link__hover" aria-hidden="true">cacr@cacr.com.br</span>
+          </a>
+        </div>
+
+        <div class="cta-section__btn" data-anim="cta-btn">
+          <a href="mailto:cacr@cacr.com.br?subject=Solicitação de Orçamento - Site" class="btn btn-primary">
+            Solicitar Orçamento por Email <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__col">
+          <div class="footer__col-label">Email</div>
+          <a href="mailto:cacr@cacr.com.br" class="footer__col-value">cacr@cacr.com.br</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-label">Especialidade</div>
+          <div class="footer__col-value">HVAC Engineering</div>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-label">Cobertura</div>
+          <div class="footer__col-value">Brasil + América do Sul</div>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-label">Desde</div>
+          <div class="footer__col-value">Mais de 20 anos</div>
+        </div>
+      </div>
+
+      <div class="footer__wordmark-wrap">
+        <div class="footer__wordmark" data-anim="footer-wordmark" aria-hidden="true">CACR</div>
+      </div>
+
+      <p class="footer__tagline">Total Clima Solutions</p>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 CACR Engenharia e Instalações Ltda. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // ===== REDUCED MOTION CHECK =====
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // ===== NAV SCROLL =====
+      const nav = document.querySelector('.nav');
+      let lastScrollY = 0;
+      let ticking = false;
+
+      function updateNav() {
+        const scrollY = window.scrollY;
+        if (scrollY > 80) {
+          nav.classList.add('nav--scrolled');
+        } else {
+          nav.classList.remove('nav--scrolled');
+        }
+        lastScrollY = scrollY;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(updateNav);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // ===== MOBILE NAV =====
+      const hamburger = document.querySelector('.nav__hamburger');
+      const mobilePanel = document.querySelector('.nav__mobile-panel');
+      const mobileOverlay = document.querySelector('.nav__mobile-overlay');
+      const mobileLinks = document.querySelectorAll('.nav__mobile-link');
+
+      function toggleMobileNav(open) {
+        const isOpen = typeof open === 'boolean' ? open : !document.body.classList.contains('mobile-open');
+        document.body.classList.toggle('mobile-open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen);
+        mobilePanel.setAttribute('aria-hidden', !isOpen);
+        if (isOpen) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
+      }
+
+      hamburger.addEventListener('click', function() { toggleMobileNav(); });
+      mobileOverlay.addEventListener('click', function() { toggleMobileNav(false); });
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() { toggleMobileNav(false); });
+      });
+
+      // ===== HERO WORD STAGGER =====
+      const heroHeadline = document.querySelector('.hero__headline');
+      if (heroHeadline) {
+        const text = heroHeadline.textContent.trim();
+        const words = text.split(/\s+/);
+        heroHeadline.innerHTML = '';
+        words.forEach(function(word, i) {
+          const mask = document.createElement('span');
+          mask.className = 'hero-word-mask';
+          const inner = document.createElement('span');
+          inner.className = 'hero-word';
+          inner.textContent = word;
+          inner.style.transitionDelay = (i * 40) + 'ms';
+          mask.appendChild(inner);
+          heroHeadline.appendChild(mask);
+          if (i < words.length - 1) {
+            heroHeadline.appendChild(document.createTextNode(' '));
+          }
+        });
+      }
+
+      // ===== CTA WORD STAGGER =====
+      const ctaHeadline = document.querySelector('[data-anim="cta-headline"]');
+      if (ctaHeadline) {
+        const text = ctaHeadline.textContent.trim();
+        const words = text.split(/\s+/);
+        ctaHeadline.innerHTML = '';
+        words.forEach(function(word, i) {
+          var mask = document.createElement('span');
+          mask.className = 'cta-char-mask';
+          var inner = document.createElement('span');
+          inner.className = 'cta-char';
+          inner.textContent = word;
+          inner.style.transitionDelay = (i * 40) + 'ms';
+          mask.appendChild(inner);
+          ctaHeadline.appendChild(mask);
+          if (i < words.length - 1) {
+            ctaHeadline.appendChild(document.createTextNode(' '));
+          }
+        });
+      }
+
+      // ===== COUNT UP ANIMATION =====
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function countUp(el, target, duration, suffix) {
+        suffix = suffix || '';
+        const start = performance.now();
+        function update(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeOutCubic(progress);
+          const current = Math.round(easedProgress * target);
+          el.textContent = current + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        }
+        requestAnimationFrame(update);
+      }
+
+      // ===== PARALLAX =====
+      const parallaxElements = document.querySelectorAll('[data-parallax]');
+      let parallaxTicking = false;
+
+      function updateParallax() {
+        if (prefersReducedMotion) return;
+        parallaxElements.forEach(function(el) {
+          const rect = el.getBoundingClientRect();
+          const viewHeight = window.innerHeight;
+          if (rect.top < viewHeight && rect.bottom > 0) {
+            const scrollProgress = (viewHeight - rect.top) / (viewHeight + rect.height);
+            const offset = (scrollProgress - 0.5) * 40 * 0.85;
+            const clampedOffset = Math.max(-40, Math.min(40, offset));
+            el.querySelector('img').style.transform = 'translateY(' + clampedOffset + 'px)';
+          }
+        });
+        parallaxTicking = false;
+      }
+
+      if (parallaxElements.length > 0) {
+        window.addEventListener('scroll', function() {
+          if (!parallaxTicking) {
+            requestAnimationFrame(updateParallax);
+            parallaxTicking = true;
+          }
+        }, { passive: true });
+      }
+
+      // ===== INTERSECTION OBSERVER FACTORY =====
+      function createObserver(options, callback) {
+        return new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              callback(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+      }
+
+      // If reduced motion, make everything visible immediately
+      if (prefersReducedMotion) {
+        document.querySelectorAll('.hero__badge, .hero-word, .hero__sub, .hero__ctas, .hero__stat, .hero__image-wrap, .service-card, .about__eyebrow, .about__heading, .about__narrative, .about__text, .about__credentials, .awards__featured, .awards__row, .cta-char, .cta-section__lead, .cta-section__email, .cta-section__btn, .footer__wordmark').forEach(function(el) {
+          el.classList.add('in-view');
+        });
+        // Set count values directly
+        document.querySelectorAll('[data-count]').forEach(function(el) {
+          var suffix = el.getAttribute('data-suffix') || '';
+          el.textContent = el.getAttribute('data-count') + suffix;
+        });
+        return; // Exit early, no animations needed
+      }
+
+      // ===== HERO OBSERVER =====
+      var heroObserver = createObserver({ threshold: 0.2 }, function(target) {
+        // Badge
+        var badge = target.querySelector('.hero__badge');
+        if (badge) badge.classList.add('in-view');
+
+        // Words
+        var words = target.querySelectorAll('.hero-word');
+        words.forEach(function(w) { w.classList.add('in-view'); });
+
+        // Sub
+        var sub = target.querySelector('.hero__sub');
+        if (sub) sub.classList.add('in-view');
+
+        // CTAs
+        var ctas = target.querySelector('.hero__ctas');
+        if (ctas) ctas.classList.add('in-view');
+
+        // Stats
+        var stats = target.querySelectorAll('.hero__stat');
+        stats.forEach(function(stat, i) {
+          setTimeout(function() {
+            stat.classList.add('in-view');
+            var numEl = stat.querySelector('[data-count]');
+            if (numEl) {
+              var targetVal = parseInt(numEl.getAttribute('data-count'), 10);
+              var suffix = numEl.getAttribute('data-suffix') || '';
+              countUp(numEl, targetVal, 2000, suffix);
+            }
+          }, parseInt(stat.getAttribute('data-delay') || 0, 10));
+        });
+
+        // Image
+        var imageWrap = target.querySelector('.hero__image-wrap');
+        if (imageWrap) {
+          setTimeout(function() { imageWrap.classList.add('in-view'); }, 200);
+        }
+      });
+
+      var heroSection = document.querySelector('.hero');
+      if (heroSection) heroObserver.observe(heroSection);
+
+      // ===== SERVICE CARDS OBSERVER =====
+      var serviceObserver = createObserver({ threshold: 0.15 }, function(target) {
+        var delay = parseInt(target.getAttribute('data-delay') || 0, 10);
+        setTimeout(function() {
+          target.classList.add('in-view');
+        }, delay);
+      });
+
+      document.querySelectorAll('.service-card').forEach(function(card) {
+        serviceObserver.observe(card);
+      });
+
+      // ===== ABOUT OBSERVER =====
+      var aboutObserver = createObserver({ threshold: 0.2 }, function(target) {
+        target.classList.add('in-view');
+      });
+
+      document.querySelectorAll('[data-anim="about-reveal"]').forEach(function(el) {
+        aboutObserver.observe(el);
+      });
+
+      // ===== AWARDS OBSERVER =====
+      var awardsObserver = createObserver({ threshold: 0.2 }, function(target) {
+        target.classList.add('in-view');
+      });
+
+      var awardsFeatured = document.querySelector('.awards__featured');
+      if (awardsFeatured) awardsObserver.observe(awardsFeatured);
+
+      var awardsRowObserver = createObserver({ threshold: 0.2 }, function(target) {
+        var delay = parseInt(target.getAttribute('data-delay') || 0, 10);
+        setTimeout(function() {
+          target.classList.add('in-view');
+
+          // Count-up for year
+          var counter = target.querySelector('[data-count-year]');
+          if (counter) {
+            var yearVal = parseInt(counter.getAttribute('data-count-year'), 10);
+            countUp(counter, yearVal, 2000, '');
+          }
+        }, delay);
+      });
+
+      document.querySelectorAll('.awards__row').forEach(function(row) {
+        awardsRowObserver.observe(row);
+      });
+
+      // ===== CTA SECTION OBSERVER =====
+      var ctaObserver = createObserver({ threshold: 0.25 }, function(target) {
+        // Chars
+        target.querySelectorAll('.cta-char').forEach(function(ch) {
+          ch.classList.add('in-view');
+        });
+        // Lead
+        var lead = target.querySelector('.cta-section__lead');
+        if (lead) lead.classList.add('in-view');
+        // Email
+        var email = target.querySelector('.cta-section__email');
+        if (email) email.classList.add('in-view');
+        // Button
+        var btn = target.querySelector('.cta-section__btn');
+        if (btn) btn.classList.add('in-view');
+      });
+
+      var ctaSection = document.querySelector('.cta-section');
+      if (ctaSection) ctaObserver.observe(ctaSection);
+
+      // ===== FOOTER WORDMARK OBSERVER =====
+      var footerObserver = createObserver({ threshold: 0.3 }, function(target) {
+        target.classList.add('in-view');
+      });
+
+      var footerWordmark = document.querySelector('.footer__wordmark');
+      if (footerWordmark) footerObserver.observe(footerWordmark);
+
+      // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            var navH = nav.offsetHeight;
+            var top = targetEl.getBoundingClientRect().top + window.scrollY - navH;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
