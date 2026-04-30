@@ -907,142 +907,190 @@
       height: 16px;
     }
 
-    /* ===== AWARDS ===== */
-    .awards {
+    /* ===== PORTFOLIO ===== */
+    .portfolio {
       background: var(--color-neutral-50);
       padding: clamp(4rem, 3rem + 5vw, 8rem) 0;
+      overflow: hidden;
     }
 
-    .awards__heading {
+    .portfolio__header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
       margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
     }
 
-    .awards__inner {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-
-    @media (min-width: 768px) {
-      .awards__inner {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-      }
-    }
-
-    .awards__featured {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 700ms var(--ease-reveal), transform 700ms var(--ease-reveal);
-    }
-
-    .awards__featured.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .awards__featured-image {
-      margin-bottom: 1.5rem;
-      max-width: 280px;
-      border-radius: 4px;
-      overflow: hidden;
-      background: #fff;
-      padding: 1.5rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    }
-
-    .awards__featured-image img {
-      width: 100%;
-    }
-
-    .awards__featured h3 {
+    .portfolio__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
       margin-bottom: 0.5rem;
     }
 
-    .awards__featured p {
+    .portfolio__heading {
+      margin-bottom: 0;
+    }
+
+    .portfolio__sub {
       color: var(--color-neutral-400);
       font-size: 0.9375rem;
+      max-width: 480px;
     }
 
-    .awards__list {
+    .portfolio__carousel-wrap {
+      position: relative;
+      margin: 0 calc(-50vw + 50%);
+      width: 100vw;
+    }
+
+    .portfolio__carousel-wrap::before,
+    .portfolio__carousel-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .portfolio__carousel-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--color-neutral-50), transparent);
+    }
+
+    .portfolio__carousel-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--color-neutral-50), transparent);
+    }
+
+    .portfolio__track {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
+      gap: 1.5rem;
+      animation: portfolio-scroll 40s linear infinite;
+      width: max-content;
     }
 
-    .awards__row {
+    .portfolio__track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes portfolio-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .portfolio__card {
+      flex-shrink: 0;
+      width: 320px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--color-neutral-100);
+      transition: transform 400ms var(--ease-reveal), box-shadow 400ms var(--ease-reveal);
+    }
+
+    .portfolio__card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    .portfolio__card-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .portfolio__card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 600ms var(--ease-reveal);
+    }
+
+    .portfolio__card:hover .portfolio__card-image img {
+      transform: scale(1.05);
+    }
+
+    .portfolio__card-tag {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 0.3rem 0.625rem;
+      border-radius: 100px;
+    }
+
+    .portfolio__card-body {
+      padding: 1.25rem;
+    }
+
+    .portfolio__card-service {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-neutral-900);
+      margin-bottom: 0.375rem;
+    }
+
+    .portfolio__card-desc {
+      font-size: 0.8125rem;
+      color: var(--color-neutral-400);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio__card-client {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      padding: 1.5rem;
-      background: #fff;
-      border-radius: 4px;
-      border: 1px solid var(--color-neutral-100);
-      transition: background 300ms ease, border-color 300ms ease, transform 300ms var(--ease-reveal);
-      opacity: 0;
-      transform: translateX(30px);
+      gap: 0.625rem;
+      padding-top: 0.875rem;
+      border-top: 1px solid var(--color-neutral-100);
     }
 
-    .awards__row.in-view {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .awards__row:hover {
+    .portfolio__card-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
       background: var(--color-neutral-50);
-      border-color: var(--color-accent);
-      transform: translateX(4px);
-    }
-
-    .awards__row.in-view:hover {
-      transform: translateX(4px);
-    }
-
-    .awards__row-image {
-      flex-shrink: 0;
-      width: 60px;
-      height: 60px;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--color-neutral-50);
-      border-radius: 4px;
-      padding: 0.5rem;
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: 0.02em;
     }
 
-    .awards__row-image img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    .awards__row-info {
+    .portfolio__card-client-info {
       flex: 1;
+      min-width: 0;
     }
 
-    .awards__row-title {
+    .portfolio__card-client-name {
       font-family: var(--font-heading);
+      font-size: 0.8125rem;
       font-weight: 600;
-      font-size: 1rem;
       color: var(--color-neutral-900);
     }
 
-    .awards__row-year {
-      font-family: var(--font-mono);
-      font-size: 0.875rem;
+    .portfolio__card-client-sector {
+      font-size: 0.6875rem;
       color: var(--color-neutral-400);
-    }
-
-    .awards__row-counter {
-      font-family: var(--font-mono);
-      font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
-      font-weight: 700;
-      color: var(--color-accent);
-      transition: color 300ms ease;
-    }
-
-    .awards__row:hover .awards__row-counter {
-      color: var(--color-primary);
     }
 
     /* ===== CTA SECTION ===== */
@@ -1649,41 +1697,161 @@
       </div>
     </section>
 
-    <!-- ===== AWARDS ===== -->
-    <section class="awards" id="premiacoes" aria-label="Premiações e reconhecimento">
+    <!-- ===== PORTFOLIO ===== -->
+    <section class="portfolio" id="premiacoes" aria-label="Portfólio de projetos">
       <div class="container">
-        <h2 class="awards__heading">Reconhecimento</h2>
+        <div class="portfolio__header">
+          <div>
+            <p class="portfolio__eyebrow">Portfólio</p>
+            <h2 class="portfolio__heading">Cases & Projetos</h2>
+          </div>
+          <p class="portfolio__sub">Soluções de climatização para grandes indústrias e operações de alto padrão.</p>
+        </div>
+      </div>
 
-        <div class="awards__inner">
-          <div class="awards__featured" data-anim="awards-featured">
-            <div class="awards__featured-image">
-              <img src="assets/premioquality.gif" alt="Prêmio Quality Brasil 2002" width="280" height="200" loading="lazy">
+      <div class="portfolio__carousel-wrap">
+        <div class="portfolio__track" id="portfolioTrack">
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=640&q=80&fit=crop" alt="Linha de produção farmacêutica com sala limpa" loading="lazy">
+              <span class="portfolio__card-tag">Sala Limpa</span>
             </div>
-            <h3>Prêmio Quality Brasil</h3>
-            <p>Reconhecimento pela excelência em engenharia e qualidade de serviços prestados no setor de climatização.</p>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Climatização de Sala Limpa ISO 7</h3>
+              <p class="portfolio__card-desc">Sistema HVAC completo com filtragem HEPA e controle de pressão diferencial para produção farmacêutica.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">EMS</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">EMS Pharma</div>
+                  <div class="portfolio__card-client-sector">Indústria Farmacêutica</div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="awards__list">
-            <div class="awards__row" data-anim="awards-row" data-delay="0">
-              <div class="awards__row-image">
-                <img src="assets/premioquality.gif" alt="Quality Brasil" width="60" height="60" loading="lazy">
-              </div>
-              <div class="awards__row-info">
-                <div class="awards__row-title">Quality Brasil</div>
-                <div class="awards__row-year">Prêmio de Excelência</div>
-              </div>
-              <div class="awards__row-counter" data-count-year="2002">2002</div>
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=640&q=80&fit=crop" alt="Linha de montagem automotiva" loading="lazy">
+              <span class="portfolio__card-tag">Industrial</span>
             </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Ventilação de Linha de Pintura</h3>
+              <p class="portfolio__card-desc">Sistema de exaustão e insuflamento para cabines de pintura com controle de VOC e eficiência energética.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">VW</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Volkswagen</div>
+                  <div class="portfolio__card-client-sector">Indústria Automotiva</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            <div class="awards__row" data-anim="awards-row" data-delay="60">
-              <div class="awards__row-image">
-                <img src="assets/premiosmacna.gif" alt="SMACNA Brasil" width="60" height="60" loading="lazy">
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=640&q=80&fit=crop" alt="Produção têxtil industrial" loading="lazy">
+              <span class="portfolio__card-tag">Climatização</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Controle de Umidade Têxtil</h3>
+              <p class="portfolio__card-desc">Sistema de climatização com controle preciso de temperatura e umidade relativa para fiação e tecelagem.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">COT</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Coteminas</div>
+                  <div class="portfolio__card-client-sector">Indústria Têxtil</div>
+                </div>
               </div>
-              <div class="awards__row-info">
-                <div class="awards__row-title">SMACNA Brasil</div>
-                <div class="awards__row-year">Prêmio de Qualidade</div>
+            </div>
+          </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=640&q=80&fit=crop" alt="Data center com racks de servidores" loading="lazy">
+              <span class="portfolio__card-tag">Data Center</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Refrigeração de Data Center</h3>
+              <p class="portfolio__card-desc">Projeto de climatização de precisão com redundância N+1 e monitoramento 24/7 para infraestrutura crítica.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">TIM</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">TIM Brasil</div>
+                  <div class="portfolio__card-client-sector">Telecomunicações</div>
+                </div>
               </div>
-              <div class="awards__row-counter" data-count-year="2003">2003</div>
+            </div>
+          </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=640&q=80&fit=crop" alt="Fábrica de papel e celulose" loading="lazy">
+              <span class="portfolio__card-tag">Ventilação</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Ventilação Industrial de Processo</h3>
+              <p class="portfolio__card-desc">Sistema de exaustão e ventilação para controle de particulados e temperatura em ambiente de produção de celulose.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">SUZ</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Suzano S.A.</div>
+                  <div class="portfolio__card-client-sector">Papel & Celulose</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=640&q=80&fit=crop" alt="Escritório corporativo moderno" loading="lazy">
+              <span class="portfolio__card-tag">Conforto</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">AC Central Corporativo</h3>
+              <p class="portfolio__card-desc">Projeto e instalação de sistema VRF multi-zona para sede corporativa com 12 pavimentos e auditório.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">BRA</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Bradesco</div>
+                  <div class="portfolio__card-client-sector">Conforto Térmico</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=640&q=80&fit=crop" alt="Laboratório com equipamentos de precisão" loading="lazy">
+              <span class="portfolio__card-tag">Filtragem</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Filtragem HEPA para Laboratório</h3>
+              <p class="portfolio__card-desc">Sistema de filtragem absoluta com monitoramento de partículas e pressurização positiva para laboratório de P&D.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">NAT</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Natura &Co</div>
+                  <div class="portfolio__card-client-sector">Cosméticos & P&D</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=640&q=80&fit=crop" alt="Hospital moderno" loading="lazy">
+              <span class="portfolio__card-tag">Hospitalar</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Climatização Hospitalar</h3>
+              <p class="portfolio__card-desc">HVAC para centro cirúrgico e UTI com filtragem HEPA, pressão positiva e controle de temperatura ±0.5°C.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">HSL</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Hospital Sírio-Libanês</div>
+                  <div class="portfolio__card-client-sector">Saúde</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1967,7 +2135,7 @@
 
       // If reduced motion, make everything visible immediately
       if (prefersReducedMotion) {
-        document.querySelectorAll('.hero__badge, .hero-word, .hero__sub, .hero__ctas, .hero__stat, .service-card, .about__eyebrow, .about__heading, .about__narrative, .about__text, .about__credentials, .awards__featured, .awards__row, .cta-section__text, .cta-form, .footer__wordmark').forEach(function(el) {
+        document.querySelectorAll('.hero__badge, .hero-word, .hero__sub, .hero__ctas, .hero__stat, .service-card, .about__eyebrow, .about__heading, .about__narrative, .about__text, .about__credentials, .cta-section__text, .cta-form, .footer__wordmark').forEach(function(el) {
           el.classList.add('in-view');
         });
         // Set count values directly
@@ -2037,31 +2205,12 @@
         aboutObserver.observe(el);
       });
 
-      // ===== AWARDS OBSERVER =====
-      var awardsObserver = createObserver({ threshold: 0.2 }, function(target) {
-        target.classList.add('in-view');
-      });
-
-      var awardsFeatured = document.querySelector('.awards__featured');
-      if (awardsFeatured) awardsObserver.observe(awardsFeatured);
-
-      var awardsRowObserver = createObserver({ threshold: 0.2 }, function(target) {
-        var delay = parseInt(target.getAttribute('data-delay') || 0, 10);
-        setTimeout(function() {
-          target.classList.add('in-view');
-
-          // Count-up for year
-          var counter = target.querySelector('[data-count-year]');
-          if (counter) {
-            var yearVal = parseInt(counter.getAttribute('data-count-year'), 10);
-            countUp(counter, yearVal, 2000, '');
-          }
-        }, delay);
-      });
-
-      document.querySelectorAll('.awards__row').forEach(function(row) {
-        awardsRowObserver.observe(row);
-      });
+      // ===== PORTFOLIO CAROUSEL CLONE =====
+      var portfolioTrack = document.getElementById('portfolioTrack');
+      if (portfolioTrack) {
+        var cards = portfolioTrack.innerHTML;
+        portfolioTrack.innerHTML = cards + cards;
+      }
 
       // ===== CTA SECTION OBSERVER =====
       var ctaRevealObserver = createObserver({ threshold: 0.15 }, function(target) {
