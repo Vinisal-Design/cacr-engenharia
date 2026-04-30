@@ -455,32 +455,58 @@
       position: relative;
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      background: var(--color-gradient);
+      align-items: flex-end;
       overflow: hidden;
-      padding: 6rem 0 3rem;
+      padding: 8rem 0 4rem;
     }
 
     @media (min-width: 1024px) {
       .hero {
-        padding: 6rem 0 2rem;
+        align-items: center;
+        padding: 8rem 0 5rem;
+      }
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero__bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(26, 16, 21, 0.92) 0%,
+        rgba(26, 16, 21, 0.75) 50%,
+        rgba(26, 16, 21, 0.4) 100%
+      );
+    }
+
+    @media (max-width: 1023px) {
+      .hero__bg::after {
+        background: linear-gradient(
+          to bottom,
+          rgba(26, 16, 21, 0.5) 0%,
+          rgba(26, 16, 21, 0.85) 60%,
+          rgba(26, 16, 21, 0.95) 100%
+        );
       }
     }
 
     .hero__inner {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      align-items: center;
       position: relative;
       z-index: 2;
-    }
-
-    @media (min-width: 1024px) {
-      .hero__inner {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-      }
+      max-width: 680px;
     }
 
     .hero__content {
@@ -595,43 +621,7 @@
       color: var(--color-neutral-400);
     }
 
-    /* Hero Image */
-    .hero__visual {
-      position: relative;
-      display: none;
-    }
-
-    @media (min-width: 1024px) {
-      .hero__visual {
-        display: block;
-      }
-    }
-
-    .hero__image-wrap {
-      position: relative;
-      aspect-ratio: 3/4;
-      overflow: hidden;
-      border-radius: 12px;
-      clip-path: inset(6%);
-      transition: clip-path 1000ms var(--ease-reveal);
-      box-shadow: 0 24px 48px rgba(0,0,0,0.3);
-    }
-
-    .hero__image-wrap.in-view {
-      clip-path: inset(0%);
-    }
-
-    .hero__image-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: scale(1.08);
-      transition: transform 1200ms var(--ease-reveal);
-    }
-
-    .hero__image-wrap.in-view img {
-      transform: scale(1);
-    }
+    /* Hero Image — removed, now using hero__bg full-width */
 
     /* Marquee */
     .hero__marquee {
@@ -1302,6 +1292,10 @@
   <main>
     <!-- ===== HERO ===== -->
     <section class="hero" id="empresa" aria-label="Seção principal">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1637345158353-40607a208d46?w=1920&q=80&fit=crop" alt="Estrutura industrial com sistemas de tubulação e climatização" loading="eager">
+      </div>
+
       <div class="container">
         <div class="hero__inner">
           <div class="hero__content">
@@ -1335,12 +1329,6 @@
                 <div class="stat-number hero__stat-number" style="font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1.125rem); letter-spacing: 0;">Brasil + América do Sul</div>
                 <div class="stat-label hero__stat-label">Cobertura</div>
               </div>
-            </div>
-          </div>
-
-          <div class="hero__visual">
-            <div class="hero__image-wrap" data-anim="hero-image">
-              <img src="https://images.unsplash.com/photo-1745015446589-7ee6f702d8c1?w=800&q=80&fit=crop" alt="Fachada moderna de edifício comercial com sistemas de climatização" width="600" height="750" loading="eager">
             </div>
           </div>
         </div>
@@ -1707,7 +1695,7 @@
 
       // If reduced motion, make everything visible immediately
       if (prefersReducedMotion) {
-        document.querySelectorAll('.hero__badge, .hero-word, .hero__sub, .hero__ctas, .hero__stat, .hero__image-wrap, .service-card, .about__eyebrow, .about__heading, .about__narrative, .about__text, .about__credentials, .awards__featured, .awards__row, .cta-char, .cta-section__lead, .cta-section__email, .cta-section__btn, .footer__wordmark').forEach(function(el) {
+        document.querySelectorAll('.hero__badge, .hero-word, .hero__sub, .hero__ctas, .hero__stat, .service-card, .about__eyebrow, .about__heading, .about__narrative, .about__text, .about__credentials, .awards__featured, .awards__row, .cta-char, .cta-section__lead, .cta-section__email, .cta-section__btn, .footer__wordmark').forEach(function(el) {
           el.classList.add('in-view');
         });
         // Set count values directly
@@ -1750,11 +1738,7 @@
           }, parseInt(stat.getAttribute('data-delay') || 0, 10));
         });
 
-        // Image
-        var imageWrap = target.querySelector('.hero__image-wrap');
-        if (imageWrap) {
-          setTimeout(function() { imageWrap.classList.add('in-view'); }, 200);
-        }
+        // Hero bg image is now full-width, no animation needed
       });
 
       var heroSection = document.querySelector('.hero');
