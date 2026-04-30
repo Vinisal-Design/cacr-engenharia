@@ -216,7 +216,7 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      height: 56px;
+      height: 64px;
       display: flex;
       align-items: center;
       transition: background 400ms ease, box-shadow 400ms ease, backdrop-filter 400ms ease;
@@ -224,7 +224,7 @@
 
     @media (min-width: 1024px) {
       .nav {
-        height: 72px;
+        height: 88px;
       }
     }
 
@@ -258,13 +258,19 @@
     }
 
     .nav__logo img {
-      height: 32px;
+      height: 48px;
       width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter 400ms ease;
+    }
+
+    .nav--scrolled .nav__logo img {
+      filter: none;
     }
 
     @media (min-width: 1024px) {
       .nav__logo img {
-        height: 40px;
+        height: 64px;
       }
     }
 
@@ -322,22 +328,23 @@
     }
 
     .nav__cta .btn {
-      padding: 0.625rem 1.25rem;
+      padding: 0.625rem 1.5rem;
       font-size: 0.8125rem;
-      background: var(--color-accent);
-      color: var(--color-neutral-900);
-      border-color: var(--color-accent);
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
     }
 
     .nav--scrolled .nav__cta .btn {
-      background: var(--color-accent);
-      color: var(--color-neutral-900);
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
     }
 
     .nav__cta .btn:hover {
-      background: transparent;
-      color: var(--color-accent);
-      border-color: var(--color-accent);
+      background: var(--color-secondary);
+      color: #fff;
+      border-color: var(--color-secondary);
     }
 
     /* Hamburger */
@@ -451,12 +458,12 @@
       align-items: center;
       background: var(--color-gradient);
       overflow: hidden;
-      padding: 5rem 0 3rem;
+      padding: 6rem 0 3rem;
     }
 
     @media (min-width: 1024px) {
       .hero {
-        padding: 0;
+        padding: 6rem 0 2rem;
       }
     }
 
@@ -602,10 +609,12 @@
 
     .hero__image-wrap {
       position: relative;
-      aspect-ratio: 4/5;
+      aspect-ratio: 3/4;
       overflow: hidden;
-      clip-path: inset(8%);
+      border-radius: 12px;
+      clip-path: inset(6%);
       transition: clip-path 1000ms var(--ease-reveal);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.3);
     }
 
     .hero__image-wrap.in-view {
@@ -616,7 +625,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transform: scale(1.1);
+      transform: scale(1.08);
       transition: transform 1200ms var(--ease-reveal);
     }
 
@@ -1252,7 +1261,7 @@
   <header class="nav" role="banner">
     <div class="nav__inner">
       <a href="#" class="nav__logo" aria-label="CACR Engenharia - Voltar ao topo">
-        <img src="assets/logo.gif" alt="CACR Engenharia" width="120" height="40">
+        <img src="assets/logo.gif" alt="CACR Engenharia">
       </a>
 
       <nav aria-label="Navegação principal">
@@ -1331,7 +1340,7 @@
 
           <div class="hero__visual">
             <div class="hero__image-wrap" data-anim="hero-image">
-              <img src="https://images.unsplash.com/photo-1771902985060-6133bb4b2eb6?w=800&q=80&fit=crop" alt="Sistemas de climatização HVAC em cobertura de edifício comercial" width="600" height="750" loading="eager">
+              <img src="https://images.unsplash.com/photo-1745015446589-7ee6f702d8c1?w=800&q=80&fit=crop" alt="Fachada moderna de edifício comercial com sistemas de climatização" width="600" height="750" loading="eager">
             </div>
           </div>
         </div>
