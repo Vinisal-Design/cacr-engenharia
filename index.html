@@ -973,11 +973,11 @@
     .portfolio__track {
       display: flex;
       gap: 1.5rem;
-      animation: portfolio-scroll 40s linear infinite;
+      animation: portfolio-scroll 60s linear infinite;
       width: max-content;
     }
 
-    .portfolio__track:hover {
+    .portfolio__track.paused {
       animation-play-state: paused;
     }
 
@@ -1711,19 +1711,20 @@
 
       <div class="portfolio__carousel-wrap">
         <div class="portfolio__track" id="portfolioTrack">
+
           <div class="portfolio__card">
             <div class="portfolio__card-image">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=640&q=80&fit=crop" alt="Linha de produção farmacêutica com sala limpa" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1631549916768-4b9efa198241?w=640&q=80&fit=crop" alt="Sala limpa farmacêutica com operador em traje estéril" loading="lazy">
               <span class="portfolio__card-tag">Sala Limpa</span>
             </div>
             <div class="portfolio__card-body">
-              <h3 class="portfolio__card-service">Climatização de Sala Limpa ISO 7</h3>
-              <p class="portfolio__card-desc">Sistema HVAC completo com filtragem HEPA e controle de pressão diferencial para produção farmacêutica.</p>
+              <h3 class="portfolio__card-service">Sala Limpa ISO 7 — Produção de Sólidos</h3>
+              <p class="portfolio__card-desc">HVAC com filtragem HEPA H14, pressão diferencial +15Pa, temperatura 22±2°C e umidade 45±5% para comprimidos e cápsulas.</p>
               <div class="portfolio__card-client">
                 <div class="portfolio__card-logo">EMS</div>
                 <div class="portfolio__card-client-info">
                   <div class="portfolio__card-client-name">EMS Pharma</div>
-                  <div class="portfolio__card-client-sector">Indústria Farmacêutica</div>
+                  <div class="portfolio__card-client-sector">Farmacêutica — Sólidos Orais</div>
                 </div>
               </div>
             </div>
@@ -1731,12 +1732,48 @@
 
           <div class="portfolio__card">
             <div class="portfolio__card-image">
-              <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=640&q=80&fit=crop" alt="Linha de montagem automotiva" loading="lazy">
-              <span class="portfolio__card-tag">Industrial</span>
+              <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=640&q=80&fit=crop" alt="Estoque farmacêutico com prateleiras de medicamentos" loading="lazy">
+              <span class="portfolio__card-tag">Estoque GDP</span>
             </div>
             <div class="portfolio__card-body">
-              <h3 class="portfolio__card-service">Ventilação de Linha de Pintura</h3>
-              <p class="portfolio__card-desc">Sistema de exaustão e insuflamento para cabines de pintura com controle de VOC e eficiência energética.</p>
+              <h3 class="portfolio__card-service">Climatização de CD Farmacêutico</h3>
+              <p class="portfolio__card-desc">Centro de distribuição com mapeamento térmico GDP, zonas 15-25°C e 2-8°C, monitoramento 24/7 e redundância total.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">RD</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">RD Saúde (Raia Drogasil)</div>
+                  <div class="portfolio__card-client-sector">Distribuição Farmacêutica</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=640&q=80&fit=crop" alt="Linha de produção de injetáveis farmacêuticos" loading="lazy">
+              <span class="portfolio__card-tag">Injetáveis</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Sala Limpa ISO 5 — Área Estéril</h3>
+              <p class="portfolio__card-desc">Fluxo laminar unidirecional com filtragem ULPA, cascata de pressão 5 zonas e controle de partículas para produção de injetáveis.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">ACH</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Aché Laboratórios</div>
+                  <div class="portfolio__card-client-sector">Farmacêutica — Injetáveis</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=640&q=80&fit=crop" alt="Linha de montagem automotiva com robôs de soldagem" loading="lazy">
+              <span class="portfolio__card-tag">Automotiva</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Ventilação de Cabine de Pintura</h3>
+              <p class="portfolio__card-desc">Exaustão e insuflamento com controle de VOC, filtragem de particulados e recuperação térmica para cabines robotizadas.</p>
               <div class="portfolio__card-client">
                 <div class="portfolio__card-logo">VW</div>
                 <div class="portfolio__card-client-info">
@@ -1749,17 +1786,17 @@
 
           <div class="portfolio__card">
             <div class="portfolio__card-image">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=640&q=80&fit=crop" alt="Produção têxtil industrial" loading="lazy">
-              <span class="portfolio__card-tag">Climatização</span>
+              <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=640&q=80&fit=crop" alt="Galpão industrial com estantes de armazenamento" loading="lazy">
+              <span class="portfolio__card-tag">Armazém</span>
             </div>
             <div class="portfolio__card-body">
-              <h3 class="portfolio__card-service">Controle de Umidade Têxtil</h3>
-              <p class="portfolio__card-desc">Sistema de climatização com controle preciso de temperatura e umidade relativa para fiação e tecelagem.</p>
+              <h3 class="portfolio__card-service">Climatização de Galpão de APIs</h3>
+              <p class="portfolio__card-desc">Controle de temperatura e umidade em armazém de insumos farmacêuticos ativos com ANVISA e certificação BPDF.</p>
               <div class="portfolio__card-client">
-                <div class="portfolio__card-logo">COT</div>
+                <div class="portfolio__card-logo">LIB</div>
                 <div class="portfolio__card-client-info">
-                  <div class="portfolio__card-client-name">Coteminas</div>
-                  <div class="portfolio__card-client-sector">Indústria Têxtil</div>
+                  <div class="portfolio__card-client-name">Libbs Farmacêutica</div>
+                  <div class="portfolio__card-client-sector">Farmacêutica — Insumos</div>
                 </div>
               </div>
             </div>
@@ -1767,12 +1804,12 @@
 
           <div class="portfolio__card">
             <div class="portfolio__card-image">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=640&q=80&fit=crop" alt="Data center com racks de servidores" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=640&q=80&fit=crop" alt="Data center com racks de servidores iluminados" loading="lazy">
               <span class="portfolio__card-tag">Data Center</span>
             </div>
             <div class="portfolio__card-body">
-              <h3 class="portfolio__card-service">Refrigeração de Data Center</h3>
-              <p class="portfolio__card-desc">Projeto de climatização de precisão com redundância N+1 e monitoramento 24/7 para infraestrutura crítica.</p>
+              <h3 class="portfolio__card-service">Refrigeração de Precisão N+1</h3>
+              <p class="portfolio__card-desc">Climatização de precisão com redundância total, corredor frio/quente e monitoramento contínuo para infraestrutura crítica.</p>
               <div class="portfolio__card-client">
                 <div class="portfolio__card-logo">TIM</div>
                 <div class="portfolio__card-client-info">
@@ -1785,17 +1822,17 @@
 
           <div class="portfolio__card">
             <div class="portfolio__card-image">
-              <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=640&q=80&fit=crop" alt="Fábrica de papel e celulose" loading="lazy">
-              <span class="portfolio__card-tag">Ventilação</span>
+              <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=640&q=80&fit=crop" alt="Laboratório de controle de qualidade farmacêutico" loading="lazy">
+              <span class="portfolio__card-tag">Laboratório</span>
             </div>
             <div class="portfolio__card-body">
-              <h3 class="portfolio__card-service">Ventilação Industrial de Processo</h3>
-              <p class="portfolio__card-desc">Sistema de exaustão e ventilação para controle de particulados e temperatura em ambiente de produção de celulose.</p>
+              <h3 class="portfolio__card-service">HVAC para Lab de Controle de Qualidade</h3>
+              <p class="portfolio__card-desc">Climatização de precisão ±1°C para laboratório analítico com cromatógrafos, espectrômetros e balanças de alta sensibilidade.</p>
               <div class="portfolio__card-client">
-                <div class="portfolio__card-logo">SUZ</div>
+                <div class="portfolio__card-logo">HYP</div>
                 <div class="portfolio__card-client-info">
-                  <div class="portfolio__card-client-name">Suzano S.A.</div>
-                  <div class="portfolio__card-client-sector">Papel & Celulose</div>
+                  <div class="portfolio__card-client-name">Hypera Pharma</div>
+                  <div class="portfolio__card-client-sector">Farmacêutica — Qualidade</div>
                 </div>
               </div>
             </div>
@@ -1803,48 +1840,12 @@
 
           <div class="portfolio__card">
             <div class="portfolio__card-image">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=640&q=80&fit=crop" alt="Escritório corporativo moderno" loading="lazy">
-              <span class="portfolio__card-tag">Conforto</span>
-            </div>
-            <div class="portfolio__card-body">
-              <h3 class="portfolio__card-service">AC Central Corporativo</h3>
-              <p class="portfolio__card-desc">Projeto e instalação de sistema VRF multi-zona para sede corporativa com 12 pavimentos e auditório.</p>
-              <div class="portfolio__card-client">
-                <div class="portfolio__card-logo">BRA</div>
-                <div class="portfolio__card-client-info">
-                  <div class="portfolio__card-client-name">Bradesco</div>
-                  <div class="portfolio__card-client-sector">Conforto Térmico</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="portfolio__card">
-            <div class="portfolio__card-image">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=640&q=80&fit=crop" alt="Laboratório com equipamentos de precisão" loading="lazy">
-              <span class="portfolio__card-tag">Filtragem</span>
-            </div>
-            <div class="portfolio__card-body">
-              <h3 class="portfolio__card-service">Filtragem HEPA para Laboratório</h3>
-              <p class="portfolio__card-desc">Sistema de filtragem absoluta com monitoramento de partículas e pressurização positiva para laboratório de P&D.</p>
-              <div class="portfolio__card-client">
-                <div class="portfolio__card-logo">NAT</div>
-                <div class="portfolio__card-client-info">
-                  <div class="portfolio__card-client-name">Natura &Co</div>
-                  <div class="portfolio__card-client-sector">Cosméticos & P&D</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="portfolio__card">
-            <div class="portfolio__card-image">
-              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=640&q=80&fit=crop" alt="Hospital moderno" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=640&q=80&fit=crop" alt="Centro cirúrgico hospitalar" loading="lazy">
               <span class="portfolio__card-tag">Hospitalar</span>
             </div>
             <div class="portfolio__card-body">
-              <h3 class="portfolio__card-service">Climatização Hospitalar</h3>
-              <p class="portfolio__card-desc">HVAC para centro cirúrgico e UTI com filtragem HEPA, pressão positiva e controle de temperatura ±0.5°C.</p>
+              <h3 class="portfolio__card-service">Climatização de Centro Cirúrgico</h3>
+              <p class="portfolio__card-desc">HVAC para CC e UTI com filtragem HEPA, pressão positiva escalonada e controle de temperatura ±0.5°C conforme ABNT 7256.</p>
               <div class="portfolio__card-client">
                 <div class="portfolio__card-logo">HSL</div>
                 <div class="portfolio__card-client-info">
@@ -1854,6 +1855,43 @@
               </div>
             </div>
           </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=640&q=80&fit=crop" alt="Máquinas de tecelagem têxtil industrial" loading="lazy">
+              <span class="portfolio__card-tag">Têxtil</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Controle de Umidade para Fiação</h3>
+              <p class="portfolio__card-desc">Sistema com controle de umidade relativa 65±3% e temperatura 24±2°C para evitar rompimento de fios e eletricidade estática.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">COT</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Coteminas</div>
+                  <div class="portfolio__card-client-sector">Indústria Têxtil</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio__card">
+            <div class="portfolio__card-image">
+              <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=640&q=80&fit=crop" alt="Técnico em laboratório farmacêutico com equipamentos de pesagem" loading="lazy">
+              <span class="portfolio__card-tag">Pesagem</span>
+            </div>
+            <div class="portfolio__card-body">
+              <h3 class="portfolio__card-service">Sala de Pesagem com Pressão Negativa</h3>
+              <p class="portfolio__card-desc">Sistema de contenção com pressão negativa, fluxo laminar descendente e exaustão dedicada para manipulação de princípios ativos potentes.</p>
+              <div class="portfolio__card-client">
+                <div class="portfolio__card-logo">EUR</div>
+                <div class="portfolio__card-client-info">
+                  <div class="portfolio__card-client-name">Eurofarma</div>
+                  <div class="portfolio__card-client-sector">Farmacêutica — Pesagem</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -2205,11 +2243,25 @@
         aboutObserver.observe(el);
       });
 
-      // ===== PORTFOLIO CAROUSEL CLONE =====
+      // ===== PORTFOLIO CAROUSEL =====
       var portfolioTrack = document.getElementById('portfolioTrack');
       if (portfolioTrack) {
         var cards = portfolioTrack.innerHTML;
         portfolioTrack.innerHTML = cards + cards;
+
+        var carouselWrap = portfolioTrack.parentElement;
+        carouselWrap.addEventListener('mouseenter', function() {
+          portfolioTrack.classList.add('paused');
+        });
+        carouselWrap.addEventListener('mouseleave', function() {
+          portfolioTrack.classList.remove('paused');
+        });
+        carouselWrap.addEventListener('touchstart', function() {
+          portfolioTrack.classList.add('paused');
+        }, { passive: true });
+        carouselWrap.addEventListener('touchend', function() {
+          portfolioTrack.classList.remove('paused');
+        }, { passive: true });
       }
 
       // ===== CTA SECTION OBSERVER =====
